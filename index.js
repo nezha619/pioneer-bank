@@ -1,6 +1,5 @@
 // login button event handler 
 
-
 const login = document.getElementById("login-area");
 const transactionArea = document.getElementById("transaction-area");
 
@@ -28,7 +27,9 @@ const addWithdraw = document.getElementById("addWithdraw");
 addWithdraw.addEventListener("click", function(){
 
     const withdrawNumber = getInputNumber("withdrawAmount")
-    // alert(withdrawNumber);
+    updateSpanText("currentWithdraw", withdrawNumber);
+    updateSpanText("currentBalance", -1 * withdrawNumber)
+    document.getElementById("withdrawAmount").value = "";
 })
 
 function getInputNumber (id) {
